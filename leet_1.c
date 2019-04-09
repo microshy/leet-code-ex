@@ -1,6 +1,7 @@
 /**
  * Note: The returned array must be malloced, assume caller calls free().
  */
+ /*基本思路：按照数字建立哈希表存储数组，同时利用结果减去当前数字，并在哈希表中查找该数字*/
 typedef struct Node{
     struct Node *next;
     int key;
@@ -19,7 +20,7 @@ int* twoSum(int* nums, int numsSize, int target) {
     //初始化Map指针
     for(int i=0;i<11;i++){
         map.a[i] = malloc(sizeof(Node));
-        map.a[i]->next = NULL;    
+        map.a[i]->next = NULL;
     }
     //目标数组入表
     for(int i=0;i<numsSize;i++){

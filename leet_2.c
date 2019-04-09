@@ -5,6 +5,7 @@
  *     struct ListNode *next;
  * };
  */
+ /*基本思路: 按位相加*/
 struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2) {
     int val, res, num1, num2;
     struct ListNode *tmp1, *tmp2, *temp;
@@ -30,12 +31,12 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2) {
             {
                 val = 0 + tmp2->val + res;
                 tmp2 = tmp2->next;
-            } 
+            }
             else if (tmp2 == NULL && tmp1)
             {
                 val = tmp1->val + 0 + res;
                 tmp1 = tmp1->next;
-            } 
+            }
             res = val / 10;
             val = val % 10;
             tail->next = malloc(sizeof(struct ListNode));
@@ -52,5 +53,5 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2) {
         }
         return result->next;
     }
-    return NULL; 
+    return NULL;
 }
